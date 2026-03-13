@@ -1103,7 +1103,6 @@ section {
     background-color: var(--bg-color);
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     padding-bottom: 120px;
-    /* overflow: hidden removed to allow nodes on borders to be visible */
 }
 
 .apply-header {
@@ -1171,8 +1170,6 @@ section {
     color: #000;
     font-weight: 300;
     margin: 0 0 20px 0;
-
-    /* Text-level line masking */
     background-color: var(--bg-color);
     position: relative;
     z-index: 5;
@@ -1467,7 +1464,6 @@ section {
 .mentors-inner {
     position: relative;
     border-top: 1px solid rgba(0, 0, 0, 0.5);
-    /* overflow: hidden removed to prevent clipping of nodes on borders */
 }
 
 .team-header-row,
