@@ -2608,4 +2608,238 @@ section {
     .grid-line-h { display: none; }
 
     .black-square { display: none; }
+
+    /* --- Intro Section Mobile --- */
+    .intro-inner {
+        height: auto;
+    }
+
+    .intro-text {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 45px 30px;
+        bottom: auto;
+    }
+
+    .intro-text h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .intro-text p {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .intro-red-banner {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .banner-texts {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .intro-diag-left, .intro-diag-right, .intro-black-square, .intro-red-square, .h-intro-bot {
+        display: none;
+    }
+
+    /* --- Vision Section Mobile --- */
+    .vision-inner {
+        height: auto;
+        padding-bottom: 60px;
+        overflow: visible;
+    }
+
+    .vision-text {
+        position: relative;
+        padding: 45px 30px;
+        transform: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .vision-text h2 {
+        font-size: 48px;
+    }
+
+    .vision-box {
+        position: relative;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        margin-bottom: 30px;
+    }
+
+    .vision-box img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .vision-label {
+        width: 100%;
+        padding: 15px 30px;
+    }
+
+    .vision-svg-lines {
+        display: none;
+    }
+
+    .box-center {
+        display: none; /* Hide decorative small box on mobile */
+    }
+
+    /* --- Research Section Mobile --- */
+    .research-header {
+        flex-direction: column;
+    }
+
+    .research-title-block, .research-intro-block {
+        width: 100%;
+        border-right: none;
+        padding: 45px 30px;
+    }
+
+    .research-title {
+        font-size: 40px;
+    }
+
+    .research-cards {
+        flex-direction: column;
+    }
+
+    .research-card {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* --- Outcomes Section Mobile --- */
+    .outcomes-header-row {
+        flex-direction: column;
+    }
+
+    .outcomes-header-left { display: none; }
+    
+    .outcomes-header-right {
+        width: 100%;
+        padding: 45px 30px;
+    }
+
+    .outcomes-title {
+        font-size: 40px;
+    }
+
+    .outcomes-content-row {
+        flex-direction: column;
+    }
+
+    .outcomes-col {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .outcomes-graphics { display: none; }
+
+    /* --- Apply Section Mobile --- */
+    .apply-header-row { flex-direction: column; }
+    .apply-title-box { width: 100%; padding: 45px 30px; }
+    .apply-intro-box { width: 100%; padding: 30px; }
+    .apply-title { font-size: 40px; }
+
+    .apply-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .apply-step {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 45px 30px;
+    }
+
+    /* --- Team Section Mobile --- */
+    .team-header-row { flex-direction: column; }
+    .team-title-box { width: 100%; padding: 45px 30px; }
+    .team-title { font-size: 40px; }
+
+    .team-grid, .dir-row, .mentors-grid-row {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card, .dir-card, .mentor-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 45px 30px;
+    }
+
+    .team-node-square, .mentors-node-square { display: none; }
+
+    /* --- FAQ Section Mobile --- */
+    .faq-header-row { flex-direction: column; }
+    .faq-title-box { width: 100%; padding: 45px 30px; }
+    .faq-title { font-size: 40px; }
+
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-item { border-right: none; border-bottom: 1px solid var(--border-color); padding: 30px; }
+
+    /* --- About ACDF Mobile --- */
+    .about-title-row { padding: 45px 30px; }
+    .about-text-row { flex-direction: column; padding: 0 30px 45px 30px; }
+    .about-text-left-wrapper, .about-text-right-wrapper { width: 100%; }
+    
+    .about-bg-img {
+        height: 300px;
+    }
+
+    /* --- Footer Mobile --- */
+    .footer-inner { flex-direction: column; padding: 45px 30px; gap: 40px; }
+    .footer-col-1, .footer-col-2, .footer-right-col { width: 100%; flex: none; }
+    .footer-brand { font-size: 60px; }
+    .footer-organiser-flex { flex-direction: column; gap: 30px; }
+    
+    /* Global Adaptive Fixes */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .container { 
+        width: 100%; 
+        max-width: 100%; 
+        padding: 0;
+        margin: 0;
+    }
+
+    section { 
+        padding: 0; 
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-image-box {
+        height: 480px; /* Taller for better impact */
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
