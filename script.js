@@ -75,4 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('active');
         });
     });
+
+    const mobileToggle = document.getElementById('mobileNavToggle');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+    }
 });
+
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const toggle = document.getElementById('mobileNavToggle');
+    menu.classList.toggle('active');
+    toggle.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}

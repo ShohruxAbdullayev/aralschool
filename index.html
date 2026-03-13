@@ -26,7 +26,14 @@
 
         <header class="main-header">
             <div class="container header-inner">
-                <a href="#" class="logo-text">Aral</a>
+                <div class="header-logo-container">
+                    <div class="logo-top-row">
+                        <a href="#" class="logo-text">Aral</a>
+                        <div class="mobile-logo-square"></div>
+                    </div>
+                    <a href="#" class="logo-text">school</a>
+                </div>
+                
                 <nav class="main-nav">
                     <ul>
                         <li><a href="#about">Aral School</a></li>
@@ -38,9 +45,35 @@
                         <li><a href="#summit">Aral Culture Summit</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="logo-text">school</a>
+
+                <div class="mobile-nav-toggle" id="mobileNavToggle">
+                    <div class="toggle-square"></div>
+                </div>
             </div>
         </header>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#about" onclick="toggleMobileMenu()">Aral School</a></li>
+                    <li><a href="#programme" onclick="toggleMobileMenu()">Programme</a></li>
+                    <li><a href="#apply" onclick="toggleMobileMenu()">Apply</a></li>
+                    <li><a href="#team" onclick="toggleMobileMenu()">Team</a></li>
+                    <li><a href="#faq" onclick="toggleMobileMenu()">FAQ</a></li>
+                    <li><a href="#about-acdf" onclick="toggleMobileMenu()">About ACDF</a></li>
+                    <li><a href="#summit" onclick="toggleMobileMenu()">Aral Culture Summit</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-lang-switcher">
+                <a href="#" class="active">EN</a>
+                <a href="#">UZ</a>
+                <a href="#">KK</a>
+                <a href="#">RU</a>
+            </div>
+        </div>
     </div>
 
     <section class="hero-section">
