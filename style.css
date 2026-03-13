@@ -1,0 +1,2286 @@
+@font-face {
+    font-family: 'Season Sans TRIAL';
+    src: url('./fonts/seasons/SeasonSansTRIAL-Light.woff2') format('woff2'),
+        url('./fonts/seasons/SeasonSansTRIAL-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Sans TRIAL';
+    src: url('./fonts/seasons/SeasonSansTRIAL-Regular.woff2') format('woff2'),
+        url('./fonts/seasons/SeasonSansTRIAL-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Sans TRIAL';
+    src: url('./fonts/seasons/SeasonSansTRIAL-Medium.woff2') format('woff2'),
+        url('./fonts/seasons/SeasonSansTRIAL-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Sans TRIAL';
+    src: url('./fonts/seasons/SeasonSansTRIAL-SemiBold.woff2') format('woff2'),
+        url('./fonts/seasons/SeasonSansTRIAL-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Sans TRIAL';
+    src: url('./fonts/seasons/SeasonSansTRIAL-Bold.woff2') format('woff2'),
+        url('./fonts/seasons/SeasonSansTRIAL-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Mix TRIAL';
+    src: url('./fonts/seasonsmix/SeasonMixTRIAL-Light.woff2') format('woff2'),
+        url('./fonts/seasonsmix/SeasonMixTRIAL-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Mix TRIAL';
+    src: url('./fonts/seasonsmix/SeasonMixTRIAL-Regular.woff2') format('woff2'),
+        url('./fonts/seasonsmix/SeasonMixTRIAL-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Mix TRIAL';
+    src: url('./fonts/seasonsmix/SeasonMixTRIAL-Medium.woff2') format('woff2'),
+        url('./fonts/seasonsmix/SeasonMixTRIAL-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Mix TRIAL';
+    src: url('./fonts/seasonsmix/SeasonMixTRIAL-SemiBold.woff2') format('woff2'),
+        url('./fonts/seasonsmix/SeasonMixTRIAL-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Season Mix TRIAL';
+    src: url('./fonts/seasonsmix/SeasonMixTRIAL-Bold.woff2') format('woff2'),
+        url('./fonts/seasonsmix/SeasonMixTRIAL-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --bg-color: #FCF4EB;
+    --text-color: #000000;
+    --accent-color: #E86142;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+    font-family: 'Season Mix TRIAL', serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+.section-title {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.top-banner {
+    background-color: var(--bg-color);
+    padding: 0;
+    font-size: 1rem;
+}
+
+.banner-inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+}
+
+.banner-text {
+    background-color: var(--accent-color);
+    color: #000;
+    padding: 7px 40px;
+    flex: 0 0 75%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+
+.lang-switcher a {
+    color: #000;
+    text-decoration: none;
+    padding: 6px 10px;
+}
+
+.lang-switcher a.active {
+    background-color: var(--accent-color);
+}
+
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(252, 244, 235, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--text-color);
+}
+
+.logo-text:hover {
+    color: var(--text-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.main-nav a {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    font-style: Regular;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-section {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.hero-inner {
+    position: relative;
+    height: 730px;
+}
+
+.grid-line-v {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.grid-line-v.v1 {
+    left: 25%;
+}
+
+.grid-line-v.v2 {
+    left: 50%;
+}
+
+.grid-line-v.v3 {
+    left: 75%;
+}
+
+.grid-line-h {
+    position: absolute;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1;
+}
+
+.grid-line-h.h-top {
+    top: 150px;
+    left: 50%;
+    right: 0;
+}
+
+.grid-line-h.h-mid {
+    top: 580px;
+    left: 50%;
+    right: 0;
+}
+
+
+
+.hero-image-box {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 1px);
+    z-index: 2;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.black-square {
+    position: fixed;
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+    top: 140px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+}
+
+.hero-right {
+    position: absolute;
+    top: 151px;
+    height: 428px;
+    left: calc(50% + 1px);
+    width: calc(50% - 100px);
+    background-color: var(--bg-color);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 0 45px;
+}
+
+.hero-text {
+    font-size: 2.3rem;
+    line-height: 1.25;
+    color: #000;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.hero-text .bold-text {
+    font-family: 'Season Mix TRIAL', serif;
+    font-weight: 500;
+}
+
+.intro-section {
+    padding: 0;
+    border-top: 1px solid #000;
+}
+
+.intro-inner {
+    position: relative;
+    height: 480px;
+    background-color: var(--bg-color);
+}
+
+.h-intro-bot {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.intro-diag-left {
+    position: absolute;
+    top: 0;
+    bottom: 0px;
+    left: 0;
+    width: 25%;
+    z-index: 1;
+}
+
+.intro-black-square {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.intro-text {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 45px;
+    box-sizing: border-box;
+    z-index: 2;
+    background-color: var(--bg-color);
+}
+
+.intro-text h3 {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 2.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.intro-text p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.35;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.intro-diag-right {
+    position: absolute;
+    top: 0;
+    bottom: 100px;
+    left: 75%;
+    width: 25%;
+    z-index: 1;
+}
+
+.intro-red-square {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-color: var(--accent-color);
+    top: 60%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.intro-red-banner {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 100px;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    padding: 0 45px;
+    box-sizing: border-box;
+    z-index: 3;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.intro-red-banner:hover {
+    background-color: #000;
+}
+
+.intro-red-banner:hover .apply-text,
+.intro-red-banner:hover .deadline-text {
+    color: var(--accent-color);
+}
+
+.intro-red-banner:hover .banner-line {
+    background-color: var(--accent-color);
+}
+
+.intro-red-banner:hover .banner-square {
+    background-color: var(--accent-color);
+}
+
+.intro-red-banner:active {
+    background-color: #111;
+    transform: scale(0.99);
+}
+
+.intro-red-banner:active .apply-text,
+.intro-red-banner:active .deadline-text {
+    color: var(--accent-color);
+}
+
+.intro-red-banner:active .banner-line,
+.intro-red-banner:active .banner-square {
+    background-color: var(--accent-color);
+}
+
+.intro-red-banner .banner-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.banner-texts {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.apply-text {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.deadline-text {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.banner-line {
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-square {
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+    flex-shrink: 0;
+}
+
+.info-section {
+    padding: 0;
+    border: none;
+}
+
+.info-inner {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.info-image-box {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+.info-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-right {
+    width: 50%;
+    background-color: #000;
+    padding: 100px 80px 100px 45px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-right p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: -0.2px;
+}
+
+.info-right p:last-child {
+    margin-bottom: 0;
+}
+
+.vision-section {
+    padding: 0;
+    border: none;
+    border-top: 1px solid #000;
+}
+
+.vision-inner {
+    position: relative;
+    height: 1200px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.grid-line-h.h-vision-0 {
+    top: 100px;
+    left: 0;
+    right: 0;
+}
+
+.grid-line-h.h-vision-1 {
+    top: 300px;
+    left: 50%;
+    right: 0;
+}
+
+.vision-svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.vision-text {
+    position: absolute;
+    top: 101px;
+    left: calc(50% + 1px);
+    width: calc(50% - 1px);
+    height: 199px;
+    display: flex;
+    align-items: center;
+    padding: 0 44px;
+    box-sizing: border-box;
+    z-index: 2;
+    background-color: var(--bg-color);
+}
+
+.vision-text h2 {
+    font-size: 3.8rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0;
+    color: #000;
+    font-family: 'Season Mix TRIAL', serif;
+}
+
+.vision-box {
+    position: absolute;
+    z-index: 3;
+}
+
+.vision-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.vision-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+    box-sizing: border-box;
+}
+
+.vision-label span {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #000;
+}
+
+.label-square {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+}
+
+.box-about {
+    top: 350px;
+    left: 10%;
+    width: 25%;
+    height: 250px;
+}
+
+.box-center {
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16%;
+    height: 220px;
+}
+
+.box-goals {
+    top: 380px;
+    left: 56%;
+    width: 35%;
+    height: 350px;
+}
+
+.box-mission {
+    top: 880px;
+    left: 12%;
+    width: 25%;
+    height: 250px;
+}
+
+.box-bottom-right {
+    top: 960px;
+    left: 65%;
+    width: 20%;
+    height: 180px;
+}
+
+.research-section {
+    padding: 0;
+}
+
+.research-inner {
+    position: relative;
+    background-color: var(--bg-color);
+    border-top: 1px solid #000;
+    overflow: hidden;
+}
+
+.grid-line-v {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.grid-line-v.r-v1 {
+    left: 25%;
+}
+
+.grid-line-v.r-v2 {
+    left: 50%;
+}
+
+.grid-line-v.r-v3 {
+    left: 75%;
+}
+
+.research-header {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-height: 380px;
+    border-bottom: 1px solid #000;
+    align-items: stretch;
+}
+
+.grid-line-h.r-h-mid {
+    top: 290px;
+    left: 0;
+    width: 50%;
+    position: absolute;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+.research-title-block {
+    position: relative;
+    width: 50%;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 60px 45px 0 45px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.research-title {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #000;
+    margin: -15px -20px;
+    padding: 15px 20px;
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.research-intro-block {
+    position: relative;
+    width: 50%;
+    padding: 70px 45px 0 45px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.research-intro-wrap {
+    max-width: 440px;
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 10px 25px;
+    margin: -10px -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.research-intro {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.research-cards {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.research-card {
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.research-card:last-child {
+    border-right: none;
+}
+
+.research-card-content {
+    position: relative;
+    width: 100%;
+    padding: 85px 45px 0 45px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.research-card-image-wrap {
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: 0;
+    height: auto;
+    z-index: 1;
+}
+
+.research-card-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.research-card-num {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 65px;
+    height: 65px;
+    background-color: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #000;
+    z-index: 2;
+}
+
+.research-card-label {
+    position: absolute;
+    bottom: -30px;
+    left: 45px;
+    background-color: var(--accent-color);
+    padding: 30px 40px;
+    width: 60%;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+.research-card-label span {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0%;
+    text-align: left;
+    display: block;
+}
+
+.research-card-body {
+    padding: 60px 45px 100px 45px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.research-card-body p {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
+    letter-spacing: 0%;
+    text-align: left;
+    width: 90%;
+    background-color: #ffffff;
+    padding: 35px 35px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.outcomes-section {
+    padding: 0;
+}
+
+.outcomes-inner {
+    position: relative;
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    /* overflow: hidden removed to allow nodes on borders to be visible */
+}
+
+.outcomes-header-row {
+    position: relative;
+    display: flex;
+    height: 380px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.outcomes-header-left {
+    position: relative;
+    width: 50%;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.outcomes-header-right {
+    position: relative;
+    width: 50%;
+    padding: 60px 45px;
+    box-sizing: border-box;
+}
+
+.outcomes-title {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #000;
+    margin: -65px -30px -320px -30px;
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 65px 30px 320px 30px;
+    position: relative;
+    z-index: 5;
+    vertical-align: top;
+}
+
+.outcomes-content-row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding-top: 140px;
+    padding-bottom: 100px;
+    z-index: 2;
+}
+
+.outcomes-col {
+    width: 25%;
+    position: relative;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.outcomes-card {
+    background-color: #262626;
+    height: 100%;
+    padding: 35px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.outcomes-card p {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.outcomes-graphics {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.oc-line-1 {
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+    width: 37.5%;
+    height: 480px;
+}
+
+.oc-line-1 svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.oc-line-2 {
+    position: absolute;
+    top: 380px;
+    left: 37.5%;
+    width: 12.5%;
+    height: 100px;
+}
+
+.oc-line-2 svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.oc-line-3 {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    width: 12.5%;
+    height: 100px;
+}
+
+.oc-line-3 svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.oc-square {
+    position: absolute;
+    top: 469.5px;
+    width: 21px;
+    height: 21px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.oc-sq-1 {
+    left: calc(12.5% - 10.5px);
+    background-color: var(--accent-color);
+}
+
+.oc-sq-2 {
+    left: calc(37.5% - 10.5px);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-color);
+}
+
+.oc-sq-3 {
+    left: calc(62.5% - 10.5px);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-color);
+}
+
+.apply-section {
+    padding: 0;
+}
+
+.apply-inner {
+    position: relative;
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 120px;
+    /* overflow: hidden removed to allow nodes on borders to be visible */
+}
+
+.apply-header {
+    width: 100%;
+    padding: 60px 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.apply-title {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #000;
+    margin: -65px -30px -300px -30px;
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 65px 30px 300px 30px;
+    position: relative;
+    z-index: 5;
+    vertical-align: top;
+}
+
+.apply-intro {
+    width: 100%;
+    position: relative;
+    padding-top: 80px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.apply-image-wrap {
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    height: auto;
+    z-index: 1;
+}
+
+.apply-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.apply-desc-wrap {
+    width: 50%;
+    margin-left: 25%;
+    padding: 60px 45px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.apply-desc-wrap p {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #000;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+
+    /* Text-level line masking */
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 5;
+    display: inline;
+    padding: 5px 0;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.apply-action-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 3;
+}
+
+.apply-button {
+    width: 50%;
+    background-color: var(--accent-color);
+    padding: 30px 45px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.apply-button:hover {
+    background-color: #000;
+}
+
+.apply-button:hover .apply-btn-text span,
+.apply-button:hover .apply-deadline {
+    color: var(--accent-color);
+}
+
+.apply-button:hover .apply-btn-icon {
+    background-color: var(--accent-color);
+}
+
+.apply-button:active {
+    background-color: #111;
+    transform: scale(0.99);
+}
+
+.apply-button:active .apply-btn-text span,
+.apply-button:active .apply-deadline {
+    color: var(--accent-color);
+}
+
+.apply-button:active .apply-btn-icon {
+    background-color: var(--accent-color);
+}
+
+.apply-btn-text span {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0%;
+    text-align: left;
+    transition: color 0.25s ease;
+}
+
+.apply-btn-text .apply-deadline {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 0%;
+    text-align: left;
+    transition: color 0.25s ease;
+}
+
+.apply-btn-icon {
+    width: 21px;
+    height: 21px;
+    background-color: #262626;
+    transition: background-color 0.25s ease;
+}
+
+
+.apply-steps-container {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding-top: 120px;
+}
+
+.apply-step-row {
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.step-left {
+    justify-content: flex-start;
+}
+
+.step-right {
+    justify-content: flex-end;
+}
+
+.step-left .apply-step-box {
+    width: 45%;
+    padding: 0 45px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.step-right .apply-step-box {
+    width: 45%;
+    padding: 0 45px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.apply-step-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    background-color: #fff;
+}
+
+.apply-step-num {
+    width: 65px;
+    height: 65px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.apply-step-content {
+    flex: 1;
+    padding-top: 15px;
+}
+
+.apply-step-content.block-spacing {
+    padding-top: 20px;
+}
+
+.apply-step-content h3 {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0 0 35px 0;
+}
+
+.apply-step-content ul,
+.apply-step-content ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.apply-step-content li,
+.apply-step-content p {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.apply-red-bar {
+    background-color: var(--accent-color);
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.apply-red-bar:hover {
+    background-color: #000;
+}
+
+.apply-red-bar:hover span {
+    color: var(--accent-color);
+}
+
+.apply-red-bar:hover .apply-btn-icon {
+    background-color: var(--accent-color);
+}
+
+.apply-red-bar:active {
+    background-color: #111;
+    transform: scale(0.99);
+}
+
+.apply-red-bar:active span {
+    color: var(--accent-color);
+}
+
+.apply-red-bar:active .apply-btn-icon {
+    background-color: var(--accent-color);
+}
+
+.apply-red-bar span {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    transition: color 0.25s ease;
+}
+
+.doc-intro {
+    margin-bottom: 25px !important;
+}
+
+.doc-note {
+    font-size: 0.75rem !important;
+    opacity: 0.6;
+    margin-top: 30px;
+}
+
+.gfx-conn {
+    position: absolute;
+    top: -120px;
+    height: 120px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gfx-conn.to-left {
+    left: 45%;
+    width: 5%;
+}
+
+.gfx-conn.to-right {
+    left: 50%;
+    width: 5%;
+}
+
+.gfx-conn svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.gc-node {
+    position: absolute;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    background-color: #262626;
+    z-index: 10;
+}
+
+.to-left .gc-node {
+    right: -10.5px;
+    top: -10.5px;
+}
+
+.to-right .gc-node {
+    left: -10.5px;
+    top: -10.5px;
+}
+
+.team-section,
+.mentors-section {
+    padding: 0;
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+.team-inner,
+.mentors-inner {
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    /* overflow: hidden removed to prevent clipping of nodes on borders */
+}
+
+.team-header-row,
+.team-row,
+.mentors-header-row,
+.mentors-cats-row,
+.mentors-grid-row {
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.team-row.border-bottom,
+.mentors-cats-row.border-bottom,
+.team-header-row,
+.mentors-header-row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.team-col,
+.mentors-col {
+    position: relative;
+    box-sizing: border-box;
+    width: 25%;
+    flex-shrink: 0;
+}
+
+.title-col,
+.category-col {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+.title-col {
+    padding: 25px 51px 60px 51px;
+    overflow: hidden;
+}
+
+.category-col {
+    padding: 25px 51px 40px 51px;
+}
+
+.border-right {
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.border-left {
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.team-title,
+.mentors-title {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #000;
+    margin: -30px -50px -200px -50px;
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 30px 50px 200px 50px;
+    position: relative;
+    z-index: 5;
+    vertical-align: top;
+}
+
+.category-col h3 {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 53px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.team-diag,
+.mentors-diag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+}
+
+.team-node-square {
+    position: absolute;
+    top: -10.5px;
+    right: -10.5px;
+    width: 21px;
+    height: 21px;
+    background-color: #F96243;
+    z-index: 10;
+}
+
+.mentors-node-square {
+    position: absolute;
+    bottom: -10.5px;
+    right: -10.5px;
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+    z-index: 10;
+}
+
+.profile-card {
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-card {
+    padding: 0;
+}
+
+.bio-col-half,
+.bio-col-full,
+.mentors-grid-row .bio-text {
+    padding: 60px 40px;
+}
+
+.profile-col {
+    padding: 0;
+}
+
+.mentors-grid-row .bio-text {
+    margin-top: 0;
+}
+
+.profile-img-box {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img-box img {
+    width: 76%;
+    height: 76%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.profile-diag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.profile-node-square {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 21px;
+    height: 21px;
+    background-color: #f96243;
+    z-index: 3;
+}
+
+.profile-card h3 {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 30px 45px 15px 45px;
+}
+
+.profile-card .role {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 0 45px 30px 45px;
+}
+
+.member-card h3 {
+    margin: 30px 30px 15px 30px;
+}
+
+.member-card .role {
+    margin: 0 30px 30px 30px;
+}
+
+.bio-text {
+    margin-top: 30px;
+}
+
+.member-card .bio-text {
+    margin: 0 30px 30px 30px;
+}
+
+.bio-text p,
+.bio-col-half p,
+.bio-col-full p {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0 0 20px 0;
+}
+
+.faq-section {
+    background-color: #0d0d0d;
+    position: relative;
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+
+.faq-inner {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-row {
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.row-modal .faq-col,
+.row-modal .faq-modal-col {
+    padding-bottom: 15vw;
+}
+
+.border-bottom-light {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.border-bottom-dark {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.border-right-light {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.border-left-light {
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.border-right-dark {
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.faq-col {
+    width: 25%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.row-modal .faq-col {
+    width: 12.5%;
+}
+
+.title-col-faq {
+    padding: 100px 51px;
+    padding-left: 12.5vw;
+}
+
+.faq-modal-col {
+    width: 75%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
+}
+
+.faq-title {
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Season Mix TRIAL', serif;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.img-col {
+    position: relative;
+    min-height: 250px;
+}
+
+.faq-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.bg-dome {
+    background-image: url('./img/faq1.png');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.5;
+}
+
+.faq-bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+.faq-bg-layer .faq-col {
+    z-index: 2;
+    height: 100%;
+}
+
+.bg-berries {
+    background-image: url('./img/faq2.png');
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    height: 100%;
+    width: 35%;
+    top: auto;
+    bottom: 0;
+    left: 8%;
+    right: auto;
+    z-index: 0;
+}
+
+.bg-crown {
+    background-image: url('./img/faq3.png');
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    height: 100%;
+    width: 35%;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 8%;
+    z-index: 0;
+}
+
+.faq-diag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.faq-node-sq {
+    position: absolute;
+    top: -10.5px;
+    left: 50%;
+    margin-left: -10.5px;
+    width: 21px;
+    height: 21px;
+    background-color: #f96243;
+    z-index: 10;
+}
+
+.faq-modal-inner {
+    display: flex;
+    width: 100%;
+    background-color: var(--bg-color);
+}
+
+.faq-modal-half {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 80px 45px 60px 45px;
+    box-sizing: border-box;
+}
+
+.faq-item {
+    padding: 30px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item.active {
+    background-color: #ffffff;
+    padding: 30px 45px;
+    margin: 0 -45px;
+    box-sizing: border-box;
+    width: calc(100% + 90px);
+}
+
+.faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.faq-q span {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    color: #000;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-a {
+    display: none;
+    margin-top: 20px;
+}
+
+.faq-item.active .faq-a {
+    display: block;
+}
+
+.faq-a p {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.about-section {
+    position: relative;
+    background-color: var(--bg-color);
+    padding: 0 0 150px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+}
+
+.grid-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.grid-overlay-dark .grid-col {
+    width: 25%;
+    height: 100%;
+}
+
+.about-inner {
+    position: relative;
+    z-index: 2;
+    padding-top: 100px;
+}
+
+.about-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "overlap";
+}
+
+.about-img-layer {
+    grid-area: overlap;
+    width: 100%;
+}
+
+.about-bg-img {
+    width: 100%;
+    display: block;
+}
+
+.about-content-layer {
+    grid-area: overlap;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.about-content-layer>* {
+    pointer-events: auto;
+}
+
+.about-title-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.about-title-box {
+    width: 50%;
+    background-color: var(--bg-color);
+    padding: 5vw 4vw;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.about-node-black {
+    position: absolute;
+    top: -10.5px;
+    left: -10.5px;
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+    z-index: 10;
+}
+
+.about-title-box h2 {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Mix TRIAL', serif;
+    font-style: normal;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 86px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.about-text-row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vw;
+}
+
+.about-text-left-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-text-left {
+    width: 55%;
+    background-color: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.about-text-left p {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Mix TRIAL', serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0;
+}
+
+.about-text-right-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5vw;
+}
+
+.about-text-right {
+    width: 75%;
+    background-color: #fff;
+    padding: 50px 45px;
+    box-sizing: border-box;
+}
+
+.about-text-right p {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 0 0 20px 0;
+}
+
+.about-text-right p:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer {
+    background-color: var(--bg-color);
+    width: 100%;
+    margin-top: 15vw;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 250px 1fr;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.footer-col-1,
+.footer-col-2 {
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 3vw 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-col-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.footer-col-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+.footer-right-col {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-top-right {
+    height: 250px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 3vw 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footer-bottom-right {
+    flex: 1;
+    padding: 3vw 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-node-black {
+    position: absolute;
+    bottom: 120px;
+    top: auto;
+    right: -10.5px;
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+    z-index: 5;
+}
+
+.footer-h4 {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #000;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.footer-p,
+.footer-policy a {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    margin: 0;
+    text-decoration: none;
+}
+
+.footer-block {
+    margin-bottom: 30px;
+}
+
+.footer-brand {
+    font-family: 'Season Mix TRIAL', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 0.8;
+    color: #000;
+    letter-spacing: -3px;
+    margin-bottom: -5px;
+}
+
+.footer-col-1 .footer-brand {
+    margin-bottom: 120px;
+}
+
+.mb-extra {
+    margin-bottom: 25px;
+}
+
+.newsletter-form {
+    display: flex;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: transparent;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 20px 25px;
+    border: none;
+    background: transparent;
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    color: #000;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.newsletter-form button {
+    padding: 20px 40px;
+    border: none;
+    background: transparent;
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+}
+
+.footer-organiser-flex {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.footer-logo-wrap {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-u-logo {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo-text {
+    font-family: 'Season Mix TRIAL', serif;
+    font-size: 20px;
+    line-height: 1.1;
+    color: #000;
+}
+
+.footer-policy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.footer-policy a {
+    display: block;
+    margin-bottom: 5px;
+}
