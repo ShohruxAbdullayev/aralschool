@@ -2400,11 +2400,16 @@ section {
     content: '';
     position: absolute;
     width: 24px;
-    height: 1px;
+    height: 2px; /* Thicker for better visibility */
     background-color: #000;
+    z-index: 10;
 }
 .mobile-nav-toggle.active .toggle-square::before { transform: rotate(45deg); }
-.mobile-nav-toggle.active .toggle-square::after { transform: rotate(-45deg); }
+.mobile-nav-toggle.active .toggle-square::after { 
+    transform: rotate(-45deg); 
+    opacity: 1 !important; /* Ensure visibility */
+    background-color: #000 !important;
+}
 
 /* Mobile Menu Overlay */
 .mobile-menu-overlay {
@@ -2494,224 +2499,357 @@ section {
 }
 
 @media (max-width: 768px) {
-    .banner-text {
-        font-size: 14px;
-        padding: 7px 20px;
-        flex: 1;
+    /* =============================================
+       GLOBAL — prevent horizontal scroll
+    ============================================= */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
     }
-    
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    section {
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* =============================================
+       TOP BANNER
+    ============================================= */
+    .banner-inner {
+        flex-wrap: nowrap;
+    }
+
+    .banner-text {
+        font-size: 13px;
+        padding: 8px 16px;
+        flex: 1;
+        min-width: 0;
+    }
+
     .lang-switcher {
         display: none;
     }
-    
+
+    /* =============================================
+       HEADER — stacked logo + toggle button
+    ============================================= */
+    .main-header {
+        padding: 14px 0 20px;
+        background-color: var(--bg-color);
+        border-bottom: none;
+    }
+
+    .header-inner {
+        padding: 0 24px;
+        align-items: flex-start;
+    }
+
     .header-logo-container {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        margin-top: 10px;
     }
-    
+
     .logo-top-row {
         display: flex;
-        align-items: flex-end; /* Align bottom of 'Aral' with bottom of square */
-        gap: 30px;
-        margin-bottom: 5px;
+        align-items: flex-end;
+        gap: 18px;
     }
 
     .mobile-logo-square {
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         background-color: #000;
-        margin-bottom: 12px; /* Push it up a bit to align with text */
+        margin-bottom: 10px;
+        flex-shrink: 0;
     }
-    
+
     .logo-text {
-        font-size: 64px;
+        font-size: 58px;
         line-height: 1;
         margin: 0;
         letter-spacing: -2px;
-    }
-
-    .main-header {
-        padding: 10px 0 20px 0;
-        background-color: var(--bg-color);
-        border: none;
-    }
-
-    .header-inner {
-        padding: 0 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        text-decoration: none;
     }
 
     .mobile-nav-toggle {
         display: block;
-        margin-top: 25px; /* Align with 'Aral' text */
+        margin-top: 18px;
+        flex-shrink: 0;
     }
 
+    /* Toggle square — white box with orange inner dot */
     .toggle-square {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
         background-color: #fff;
         border: 1px solid #000;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
+    /* Orange inner square (visible when menu is closed) */
     .toggle-square::after {
         content: '';
         width: 14px;
         height: 14px;
         background-color: var(--accent-color);
         display: block;
+        transition: opacity 0.2s ease;
+        position: relative;
+        z-index: 1;
     }
-    
-    /* Hero Section Mobile */
+
+    /* When menu is open — hide orange square, show X */
+    .mobile-nav-toggle.active .toggle-square::after {
+        opacity: 0;
+    }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    .hero-section {
+        overflow: hidden;
+    }
+
     .hero-inner {
         height: auto;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
-    
+
     .hero-image-box {
         position: relative;
-        top: 0;
+        top: auto;
+        left: auto;
         width: 100%;
         height: 380px;
         order: 1;
         overflow: hidden;
     }
-    
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .hero-right {
         position: relative;
-        bottom: 0;
-        left: 0;
+        top: auto;
+        right: auto;
+        bottom: auto;
         width: 100%;
-        padding: 45px 30px;
-        background-color: var(--bg-color);
+        padding: 40px 24px;
         order: 2;
     }
-    
+
     .hero-text {
-        font-size: 24px;
-        line-height: 1.25;
+        font-size: 22px;
+        line-height: 1.4;
         width: 100%;
+        max-width: 100%;
     }
-    
-    .grid-line-v.v1, .grid-line-v.v2, .grid-line-v.v3 {
-        display: none; 
-    }
-    
-    .grid-line-h { display: none; }
 
     .black-square { display: none; }
+    .grid-line-v, .grid-line-h { display: none; }
 
-    /* --- Intro Section Mobile --- */
+    /* =============================================
+       INTRO / ARAL SCHOOL SECTION
+    ============================================= */
+    .intro-section {
+        overflow: hidden;
+    }
+
     .intro-inner {
         height: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .intro-diag-left,
+    .intro-diag-right,
+    .intro-black-square,
+    .intro-red-square,
+    .h-intro-bot {
+        display: none;
     }
 
     .intro-text {
         position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 45px 30px;
+        top: auto;
+        left: auto;
         bottom: auto;
+        width: 100%;
+        padding: 40px 24px;
+        background-color: var(--bg-color);
     }
 
     .intro-text h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
+        font-size: 22px;
+        margin-bottom: 16px;
     }
 
     .intro-text p {
-        font-size: 24px;
-        line-height: 1.25;
+        font-size: 20px;
+        line-height: 1.35;
     }
 
     .intro-red-banner {
         position: relative;
-        left: 0;
+        bottom: auto;
+        left: auto;
         width: 100%;
         height: auto;
-        padding: 30px;
+        padding: 24px;
+        flex-direction: column;
+        gap: 0;
     }
 
     .banner-texts {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
-    .intro-diag-left, .intro-diag-right, .intro-black-square, .intro-red-square, .h-intro-bot {
-        display: none;
+    .banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
     }
 
-    /* --- Vision Section Mobile --- */
+    /* =============================================
+       PROGRAMME VISION SECTION
+    ============================================= */
+    .vision-section {
+        overflow: visible;
+    }
+
     .vision-inner {
         height: auto;
-        padding-bottom: 60px;
         overflow: visible;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
     }
 
     .vision-text {
         position: relative;
-        padding: 45px 30px;
+        top: auto;
+        left: auto;
+        right: auto;
         transform: none;
-        top: 0;
-        left: 0;
         width: 100%;
+        padding: 40px 24px 20px;
+        z-index: 1;
     }
 
     .vision-text h2 {
-        font-size: 48px;
+        font-size: 44px;
+        line-height: 1.05;
     }
 
-    .vision-box {
-        position: relative;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: auto !important;
-        transform: none !important;
-        margin-bottom: 30px;
-    }
-
-    .vision-box img {
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
-    }
-
-    .vision-label {
-        width: 100%;
-        padding: 15px 30px;
-    }
-
+    /* Disable the decorative SVG connector lines */
     .vision-svg-lines {
         display: none;
     }
 
-    .box-center {
-        display: none; /* Hide decorative small box on mobile */
+    /* Reset all absolutely-positioned vision boxes */
+    .vision-box {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 0;
     }
 
-    /* --- Research Section Mobile --- */
+    .box-about,
+    .box-goals,
+    .box-mission {
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
+
+    /* Hide purely decorative small center box */
+    .box-center { display: none; }
+
+    /* Show images at consistent height */
+    .vision-img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Label stays at bottom of image */
+    .vision-label {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: auto;
+        width: auto;
+        min-width: 140px;
+        padding: 12px 20px;
+    }
+
+    /* Modal stays hidden on mobile (optional — keep for touch) */
+    .vision-modal {
+        display: none !important;
+    }
+
+    /* =============================================
+       RESEARCH SECTION
+    ============================================= */
+    .research-section {
+        overflow: hidden;
+    }
+
+    .research-inner {
+        overflow: hidden;
+    }
+
+    .r-v1, .r-v2, .r-v3, .r-h-mid { display: none; }
+
     .research-header {
         flex-direction: column;
+        min-height: auto;
+        border-bottom: 1px solid #000;
     }
 
-    .research-title-block, .research-intro-block {
+    .research-title-block {
         width: 100%;
         border-right: none;
-        padding: 45px 30px;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        padding: 40px 24px 30px;
     }
 
     .research-title {
-        font-size: 40px;
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .research-intro-block {
+        width: 100%;
+        border-right: none;
+        padding: 30px 24px 40px;
+    }
+
+    .research-intro {
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     .research-cards {
@@ -2721,23 +2859,56 @@ section {
     .research-card {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid rgba(0,0,0,0.2);
     }
 
-    /* --- Outcomes Section Mobile --- */
+    .research-card-content {
+        padding: 0;
+    }
+
+    .research-card-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .research-card-label {
+        padding: 16px 24px;
+    }
+
+    .research-card-body {
+        padding: 24px;
+    }
+
+    /* =============================================
+       PROGRAMME OUTCOMES SECTION
+    ============================================= */
+    .outcomes-section {
+        overflow: hidden;
+    }
+
+    .outcomes-inner {
+        overflow: hidden;
+    }
+
+    .outcomes-graphics { display: none; }
+    .oc-line-1, .oc-line-2, .oc-line-3 { display: none; }
+
     .outcomes-header-row {
         flex-direction: column;
     }
 
     .outcomes-header-left { display: none; }
-    
+
     .outcomes-header-right {
         width: 100%;
-        padding: 45px 30px;
+        padding: 40px 24px;
+        border-left: none;
     }
 
     .outcomes-title {
-        font-size: 40px;
+        font-size: 38px;
+        line-height: 1.1;
     }
 
     .outcomes-content-row {
@@ -2747,99 +2918,346 @@ section {
     .outcomes-col {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid rgba(0,0,0,0.2);
     }
 
-    .outcomes-graphics { display: none; }
+    .outcomes-card {
+        padding: 30px 24px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
 
-    /* --- Apply Section Mobile --- */
-    .apply-header-row { flex-direction: column; }
-    .apply-title-box { width: 100%; padding: 45px 30px; }
-    .apply-intro-box { width: 100%; padding: 30px; }
-    .apply-title { font-size: 40px; }
+    /* =============================================
+       APPLY / WHO CAN APPLY SECTION
+    ============================================= */
+    .apply-section {
+        overflow: hidden;
+    }
+
+    .apply-inner {
+        overflow: hidden;
+    }
+
+    .apply-header-row {
+        flex-direction: column;
+    }
+
+    .apply-title-box {
+        width: 100%;
+        padding: 40px 24px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .apply-title {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .apply-intro-box {
+        width: 100%;
+        padding: 30px 24px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .apply-intro-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
 
     .apply-grid {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .apply-step {
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 45px 30px;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        padding: 36px 24px;
     }
 
-    /* --- Team Section Mobile --- */
-    .team-header-row { flex-direction: column; }
-    .team-title-box { width: 100%; padding: 45px 30px; }
-    .team-title { font-size: 40px; }
-
-    .team-grid, .dir-row, .mentors-grid-row {
-        grid-template-columns: 1fr;
+    .apply-step-num {
+        font-size: 48px;
     }
 
-    .team-card, .dir-card, .mentor-card {
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 45px 30px;
-    }
+    .apply-node-sq { display: none; }
 
-    .team-node-square, .mentors-node-square { display: none; }
-
-    /* --- FAQ Section Mobile --- */
-    .faq-header-row { flex-direction: column; }
-    .faq-title-box { width: 100%; padding: 45px 30px; }
-    .faq-title { font-size: 40px; }
-
-    .faq-grid { grid-template-columns: 1fr; }
-    .faq-item { border-right: none; border-bottom: 1px solid var(--border-color); padding: 30px; }
-
-    /* --- About ACDF Mobile --- */
-    .about-title-row { padding: 45px 30px; }
-    .about-text-row { flex-direction: column; padding: 0 30px 45px 30px; }
-    .about-text-left-wrapper, .about-text-right-wrapper { width: 100%; }
-    
-    .about-bg-img {
-        height: 300px;
-    }
-
-    /* --- Footer Mobile --- */
-    .footer-inner { flex-direction: column; padding: 45px 30px; gap: 40px; }
-    .footer-col-1, .footer-col-2, .footer-right-col { width: 100%; flex: none; }
-    .footer-brand { font-size: 60px; }
-    .footer-organiser-flex { flex-direction: column; gap: 30px; }
-    
-    /* Global Adaptive Fixes */
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-    }
-
-    .container { 
-        width: 100%; 
-        max-width: 100%; 
-        padding: 0;
-        margin: 0;
-    }
-
-    section { 
-        padding: 0; 
-        width: 100%;
+    /* =============================================
+       TEAM SECTION
+    ============================================= */
+    .team-section {
         overflow: hidden;
     }
 
-    .hero-image-box {
-        height: 480px; /* Taller for better impact */
+    .team-inner {
+        overflow: hidden;
     }
 
-    .hero-image {
+    .team-header-row {
+        flex-direction: column;
+    }
+
+    .team-col.empty-col { display: none; }
+
+    .team-title-box {
+        width: 100%;
+        padding: 40px 24px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .team-title {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .team-node-square,
+    .mentors-node-square,
+    .gc-node { display: none; }
+
+    /* Director row */
+    .dir-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dir-card {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        flex-direction: column;
+    }
+
+    .profile-img-box {
+        width: 100%;
+        height: 240px;
+    }
+
+    .profile-img-box img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top center;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
+    /* Team grid */
+    .team-grid {
+        display: flex;
+        flex-direction: column;
     }
+
+    .team-card {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        flex-direction: column;
+    }
+
+    /* Mentors grid */
+    .mentors-section-wrapper { overflow: hidden; }
+
+    .mentors-grid-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mentor-card {
+        width: 50%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .mentor-card:nth-child(odd) {
+        border-right: 1px solid rgba(0,0,0,0.2);
+    }
+
+    /* Guests & critics */
+    .gc-row {
+        flex-direction: column;
+    }
+
+    .gc-card {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+
+    /* =============================================
+       FAQ SECTION
+    ============================================= */
+    .faq-section {
+        overflow: hidden;
+    }
+
+    .faq-header-row {
+        flex-direction: column;
+    }
+
+    .faq-title-box {
+        width: 100%;
+        padding: 40px 24px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .faq-title {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .faq-intro-box {
+        width: 100%;
+        padding: 30px 24px;
+        border-right: none;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .faq-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        padding: 24px;
+    }
+
+    .faq-q, .faq-a {
+        padding: 0;
+    }
+
+    .faq-node-sq { display: none; }
+
+    /* =============================================
+       ABOUT ACDF SECTION
+    ============================================= */
+    .about-section {
+        overflow: hidden;
+    }
+
+    .about-inner {
+        overflow: hidden;
+    }
+
+    .about-grid-wrapper {
+        flex-direction: column;
+    }
+
+    .about-img-layer {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .about-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about-content-layer {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-title-row {
+        padding: 36px 24px 20px;
+    }
+
+    .about-title-box h2 {
+        font-size: 38px;
+    }
+
+    .about-node-black { display: none; }
+
+    .about-text-row {
+        flex-direction: column;
+        padding: 0 24px 40px;
+        gap: 24px;
+    }
+
+    .about-text-left-wrapper,
+    .about-text-right-wrapper {
+        width: 100%;
+        border-right: none;
+        padding: 0;
+    }
+
+    .about-text-left p,
+    .about-text-right p {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .site-footer {
+        overflow: hidden;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        padding: 40px 24px;
+        gap: 36px;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-right-col {
+        width: 100%;
+        flex: none;
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .footer-brand {
+        font-size: 56px;
+        letter-spacing: -2px;
+    }
+
+    .footer-col-1 .footer-brand {
+        margin-bottom: 60px;
+    }
+
+    .footer-top-right {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .footer-organiser-flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-u-logo {
+        height: 80px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        padding: 16px 0;
+    }
+
+    .newsletter-form button {
+        padding: 16px 0;
+        text-align: left;
+    }
+
+    .footer-policy {
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .footer-node-black { display: none; }
 }
