@@ -588,13 +588,16 @@ section {
     padding: 0;
     border: none;
     border-top: 1px solid #000;
+    position: relative;
+    z-index: 100; 
+    overflow: visible;
 }
 
 .vision-inner {
     position: relative;
     height: 1200px;
     background-color: var(--bg-color);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .grid-line-h.h-vision-0 {
@@ -643,6 +646,7 @@ section {
 .vision-box {
     position: absolute;
     z-index: 3;
+    transition: all 0.3s ease;
 }
 
 .vision-img {
@@ -663,6 +667,8 @@ section {
     align-items: center;
     width: 140px;
     box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .vision-label span {
@@ -711,6 +717,74 @@ section {
     left: 65%;
     width: 20%;
     height: 180px;
+}
+
+.vision-modal {
+    position: absolute;
+    width: 460px;
+    background-color: #000;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    flex-direction: column;
+    top: 0;
+    left: 0;
+}
+
+.vision-modal.active {
+    display: flex;
+    animation: visionFadeIn 0.3s ease forwards;
+}
+
+@keyframes visionFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.vision-modal-header {
+    background-color: var(--accent-color);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 140px;
+    align-self: flex-end; 
+    cursor: pointer;
+}
+
+.vision-modal-header span {
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #000;
+}
+
+.vision-modal-close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.close-square {
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+}
+
+.vision-modal-body {
+    padding: 60px 45px;
+    box-sizing: border-box;
+}
+
+.vision-modal-body p {
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Season Sans TRIAL', sans-serif;
+    font-size: 16px;
+    line-height: 24px; 
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
 }
 
 .research-section {
@@ -938,7 +1012,6 @@ section {
     position: relative;
     background-color: var(--bg-color);
     border-top: 1px solid rgba(0, 0, 0, 0.5);
-    /* overflow: hidden removed to allow nodes on borders to be visible */
 }
 
 .outcomes-header-row {

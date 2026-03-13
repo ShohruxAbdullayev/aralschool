@@ -157,7 +157,7 @@
 
             <div class="vision-box box-about">
                 <img src="./img/vision1.png" alt="About" class="vision-img">
-                <div class="vision-label">
+                <div class="vision-label" onclick="openVisionModal('about')">
                     <span>About</span>
                     <div class="label-square"></div>
                 </div>
@@ -170,7 +170,7 @@
 
             <div class="vision-box box-goals">
                 <img src="./img/vision2.png" alt="Goals" class="vision-img">
-                <div class="vision-label">
+                <div class="vision-label" onclick="openVisionModal('goals')">
                     <span>Goals</span>
                     <div class="label-square"></div>
                 </div>
@@ -178,7 +178,7 @@
 
             <div class="vision-box box-mission">
                 <img src="./img/vision4.png" alt="Mission" class="vision-img">
-                <div class="vision-label">
+                <div class="vision-label" onclick="openVisionModal('mission')">
                     <span>Mission</span>
                     <div class="label-square"></div>
                 </div>
@@ -186,6 +186,18 @@
 
             <div class="vision-box box-bottom-right">
                 <img src="./img/vision5.png" alt="Details" class="vision-img">
+            </div>
+
+            <div id="visionModal" class="vision-modal">
+                <div class="vision-modal-header">
+                    <span id="visionModalTitle">Goals</span>
+                    <div class="vision-modal-close" onclick="closeVisionModal()">
+                        <div class="close-square"></div>
+                    </div>
+                </div>
+                <div class="vision-modal-body">
+                    <p id="visionModalText"></p>
+                </div>
             </div>
         </div>
     </section>
