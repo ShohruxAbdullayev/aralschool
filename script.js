@@ -87,6 +87,7 @@ function toggleMobileMenu() {
     const toggle = document.getElementById('mobileNavToggle');
     menu.classList.toggle('active');
     toggle.classList.toggle('active');
+    document.body.classList.toggle('menu-active');
     
     if (menu.classList.contains('active')) {
         document.body.style.overflow = 'hidden';
