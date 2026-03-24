@@ -1,4 +1,4 @@
-const visionContent = {
+const visionContent = window.visionContent || {
     about: {
         title: "About",
         text: "The Aral School is a nomadic educational platform that investigates the complex relationship between human activity and environmental change in the Aral Sea region. We invite researchers, designers, and scientists to collaborate on sustainable futures in one of the most challenging ecological contexts on Earth. By connecting global expertise with local wisdom, we aim to design resilient systems for the generations to come.",
